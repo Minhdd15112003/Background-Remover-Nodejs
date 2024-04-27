@@ -1,6 +1,6 @@
 class HomeController {
     index(req, res, next) {
-        res.render("home/index", { title: "Anh Minh" });
+       // res.render("home/index", { title: "Anh Minh" });
     }
 
     contact(req, res, next) {
