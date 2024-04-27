@@ -1,3 +1,6 @@
-# node_modules
-# README.md
-# .gitignore
+
+node_modules/
+jspm_packages/
+.gitignore
+
+
