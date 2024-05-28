@@ -27,7 +27,7 @@ app.set("view engine", "ejs");
 
 var i18n = require("i18n");
 i18n.configure({
-    locales: ["vi", "en", "zh", "hi", "ja", "en", "de", "fr", "pt", "ru", "ko"],
+    locales: ["vi", "en", "hi", "ja", "en", "de", "fr", "pt", "ru", "ko"],
     directory: __dirname + "/language",
     cookie: "lang",
     defaultLocale: "en",
