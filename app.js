@@ -7,32 +7,51 @@ var partials = require("express-partials");
 var mongoose = require("mongoose");
 const routes = require("./routes");
 const os = require("os");
- 
+const { log } = require("console");
 var app = express();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+// Việt nam
+// Hoa Kỳ
+// Trung Quốc
+// Ấn Độ
+// Nhật Bản
+// Anh
+// Đức
+// Pháp
+// Brazil
+// Nga
+// Hàn Quốc
 
+var i18n = require("i18n");
+i18n.configure({
+    locales: ["vi", "en", "zh", "hi", "ja", "en", "de", "fr", "pt", "ru", "ko"],
+    directory: __dirname + "/language",
+    cookie: "lang",
+    defaultLocale: "en",
+    header: "accept-language",
+});
 app.use(logger("dev"));
 app.use(express.json());
 app.use(partials());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-
+app.use(i18n.init);
 // Lấy danh sách các giao diện mạng của máy tính
 const networkInterfaces = os.networkInterfaces();
 
 // Duyệt qua danh sách và lấy ra địa chỉ IPv4
 let serverIP = null;
 Object.keys(networkInterfaces).forEach((interfaceName) => {
-	const interfaces = networkInterfaces[interfaceName];
-	interfaces.forEach((interfaceInfo) => {
-		if (interfaceInfo.family === "IPv4" && !interfaceInfo.internal) {
-			serverIP = interfaceInfo.address;
-		}
-	});
+    const interfaces = networkInterfaces[interfaceName];
+    interfaces.forEach((interfaceInfo) => {
+        if (interfaceInfo.family === "IPv4" && !interfaceInfo.internal) {
+            serverIP = interfaceInfo.address;
+        }
+    });
 });
 
 console.log("=====================================");
@@ -56,7 +75,6 @@ app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render("error");
 });
-
 mongoose
     .connect(process.env.MONGODB_CONNECTION_STRING)
     .then((success) => console.log("Connected to mongodb server!"))
