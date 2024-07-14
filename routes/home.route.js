@@ -5,6 +5,7 @@ var axios = require("axios");
 const FormData = require("form-data"); // Thêm dòng này
 const fs = require("fs");
 const path = require("path");
+const outputPath = __dirname.split("routes")[0] + "public/removed";
 
 function genresponse(res) {
     return {
@@ -27,6 +28,18 @@ function genresponse(res) {
         questionDetail3: res.__("questionDetail3"),
         question4: res.__("question4"),
         questionDetail4: res.__("questionDetail4"),
+        question5: res.__("question5"),
+        questionDetail5: res.__("questionDetail5"),
+        question6: res.__("question6"),
+        questionDetail6: res.__("questionDetail6"),
+        question7: res.__("question7"),
+        questionDetail7: res.__("questionDetail7"),
+        question8: res.__("question8"),
+        questionDetail8: res.__("questionDetail8"),
+        question9: res.__("question9"),
+        questionDetail9: res.__("questionDetail9"),
+        question10: res.__("question10"),
+        questionDetail10: res.__("questionDetail10"),
     };
 }
 
@@ -44,6 +57,9 @@ homeRouter.get("/:lang", async function (req, res) {
 });
 
 homeRouter.post("/uploadImage", uploadImage, async function (req, res) {
+    if (!req.file) {
+        return res.json({ error: "Please provide an image" });
+    }
     const inputPath = req.file.path;
     const formData = new FormData();
     formData.append("size", "auto");
@@ -61,12 +77,22 @@ homeRouter.post("/uploadImage", uploadImage, async function (req, res) {
     })
         .then((response) => {
             if (response.status != 200) return res.status(response.status).send("Error:", response.statusText);
-            const outputPath = `public/removed/${req.file.filename}.png`;
-            fs.writeFileSync(outputPath, response.data);
-            res.json({ path: outputPath.replace("public", "") });
+            const outputFilePath = `${outputPath}/${req.file.filename}.png`;
+            fs.writeFileSync(outputFilePath, response.data);
+            res.json({ path: `${process.env.HOSTNAME}/removed/${req.file.filename}.png`.replace("public", "") });
+
+            setTimeout(() => {
+                fs.unlink(outputFilePath, (err) => {
+                    if (err) console.error("Error deleting file:", err);
+                    else console.log("File deleted:", outputFilePath);
+                });
+            }, 100000);
         })
         .catch((error) => {
             res.status(500).send(`Request failed: ${error}`);
+        })
+        .finally(() => {
+            fs.unlinkSync(inputPath);
         });
 });
 

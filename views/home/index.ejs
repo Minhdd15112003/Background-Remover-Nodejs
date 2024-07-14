@@ -11,20 +11,21 @@
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
   <meta name="bingbot" content="index, follow">
-  <!-- twwiter -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Background remover - Xóa phông nền ảnh">
   <meta name="twitter:description" content="Free online tool to quickly and easily remove image backgrounds. Upload your image and remove the background in seconds.">
   <meta name="twitter:image" content="https://example.com/path/to/image.jpg">
-  <!-- Thẻ Facebook -->
+  <!-- Facebook -->
   <meta property="og:title" content="Background remover - Xóa phông nền ảnh">
   <meta property="og:description" content="Free online tool to quickly and easily remove image backgrounds. Upload your image and remove the background in seconds.">
   <meta property="og:image" content="https://example.com/path/to/image.jpg">
   <meta property="og:url" content="https://example.com">
-  <!-- thẻ Icon để hiển thị trên trình duyệt hoặc thiết bị apple  -->
+  <!-- Icons -->
   <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="path/to/apple-touch-icon.png">
-  <!-- hỗ trợ ngôn ngữ -->
+  <meta name="google-site-verification" content="5ACriEqEQQRmeibWjryWdNTFpKS-f_CM7XT4snLEO2k" />
+  <!-- Language support -->
   <link rel="alternate" hreflang="x-default" href="http://localhost:3001/en" />
   <link rel="alternate" hreflang="vi" href="http://localhost:3001/vi" />
   <link rel="alternate" hreflang="en" href="http://localhost:3001/en" />
@@ -36,14 +37,15 @@
   <link rel="alternate" hreflang="ru" href="http://localhost:3001/ru" />
   <link rel="alternate" hreflang="ko" href="http://localhost:3001/ko" />
 
-  <!-- script -->
+  <!-- Styles and scripts -->
   <link rel="stylesheet" href="stylesheets/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <header>
   <div class="navbar bg-base-100">
     <div class="flex-1">
-      <a href="http://localhost:3001/vi" class="btn btn-ghost text-xl">Background remover</a>
+      <a href="http://localhost:3002" class="btn btn-ghost text-xl">Background remover</a>
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
@@ -54,7 +56,7 @@
               languages
             </summary>
             <ul class="p-2 bg-base-100 rounded-t-none">
-              <li><a href="http://localhost:3001/vi">Viet nam</a></li>
+              <li><a href="/vi">Viet nam</a></li>
               <li><a href="/en">English</a></li>
               <li><a href="/hi">India</a></li>
               <li><a href="/ja">Japan</a></li>
@@ -64,83 +66,267 @@
               <li><a href="/ru">Russia</a></li>
               <li><a href="/ko">South Korea</a></li>
             </ul>
-      </ul>
-      </details>
-      </li>
+          </details>
+        </li>
       </ul>
     </div>
   </div>
 </header>
+
 <body>
   <form method="post" action="/uploadImage" enctype="multipart/form-data">
     <div class="hero min-h-screen bg-base-200">
-      <div class="hero-content ">
-        <img id="output" src="/image/image-placeholder.jpg" class="w-80 rounded-lg shadow-2xl" />
+      <div class="hero-content flex-col lg:flex-row">
+        <img id="output" src="/image/image-placeholder.jpg" class="max-w-sm rounded-lg shadow-2xl" alt="no image" />
         <div>
           <h1 class="text-3xl font-bold text-base-content"><%= home_title %></h1>
-          <p class="py-6 text-base-content"><%= home_description %></p>
+          <p class="py-6 text-base-content">
+            <label>
+              <%= home_description %>
+            </label>
+          </p>
           <div class="flex justify-center items-center">
             <input accept="image/*" name="image" type="file" class="file-input file-input-bordered file-input-primary w-full max-w-xs text-base-content" id="imageInput" onchange="handleImageUpload(event)" />
-            <div id="btn-download">
-            </div>
+            <div id="btn-download"></div>
           </div>
         </div>
       </div>
     </div>
-    <div id="feature-list">
-      <div class="feature">
-        <img src="https://pixlr.com/img/misc/remove-bg-wand.svg" class="ic" width="48" height="48" alt="100% automatic bg removal">
-        <p><%= description0 %></p>
-      </div>
-      <div class="feature">
-        <img src="https://pixlr.com/img/misc/remove-bg-batch.svg" class="ic" width="48" height="48" alt="Batch removeal of backgrounds">
-        <p><%= description %></p>
-      </div>
-      <div class="feature">
-        <img src="https://pixlr.com/img/misc/remove-bg-hq.svg" class="ic" width="48" height="48" alt="High quality free background removal">
-        <p><%= description1 %></p>
-      </div>
-      <div class="feature">
-        <img src="https://pixlr.com/img/misc/remove-bg-brush.svg" class="ic" class="ic" width="48" height="48" alt="Fine tune background removal">
-        <p><%= description2 %></p>
-      </div>
-      <div class="feature">
-        <img src="https://pixlr.com/img/misc/remove-bg-editor.svg" class="ic" width="48" height="48" alt="Photo editor after remove bg">
-        <p><%= description3 %></p>
-      </div>
-      <div class="feature">
-        <img src="https://pixlr.com/img/misc/remove-bg-e-commerce.svg" class="ic" width="48" height="48" alt="Perfect for e-commerce">
-        <p><%= description4 %></p>
-      </div>
-    </div>
-    <section class="faq top-80">
-      <div>
-        <h2 class="heavy top-10"><%= question %></h2>
-      </div>
-      <div class="wrap faq top-50">
-        <details>
-          <summary><%= question1 %></summary>
-          <%= questionDetail1 %>
-        </details>
-
-        <details>
-          <summary><%= question2 %></summary>
-          <%= questionDetail2 %>
-        </details>
-
-        <details>
-          <summary><%= question3 %></summary>
-          <%= questionDetail3 %>
-        </details>
-
-        <details>
-          <summary><%= question4 %></summary>
-          <%= questionDetail4 %>
-        </details>
-
-      </div>
-    </section>
   </form>
+
+  <div id="feature-list">
+    <div class="feature">
+      <img src="https://pixlr.com/img/misc/remove-bg-wand.svg" class="ic" width="48" height="48" alt="100% automatic bg removal">
+      <p><%= description0 %></p>
+    </div>
+    <div class="feature">
+      <img src="https://pixlr.com/img/misc/remove-bg-batch.svg" class="ic" width="48" height="48" alt="Batch removeal of backgrounds">
+      <p><%= description %></p>
+    </div>
+    <div class="feature">
+      <img src="https://pixlr.com/img/misc/remove-bg-hq.svg" class="ic" width="48" height="48" alt="High quality free background removal">
+      <p><%= description1 %></p>
+    </div>
+    <div class="feature">
+      <img src="https://pixlr.com/img/misc/remove-bg-brush.svg" class="ic" class="ic" width="48" height="48" alt="Fine tune background removal">
+      <p><%= description2 %></p>
+    </div>
+    <div class="feature">
+      <img src="https://pixlr.com/img/misc/remove-bg-editor.svg" class="ic" width="48" height="48" alt="Photo editor after remove bg">
+      <p><%= description3 %></p>
+    </div>
+    <div class="feature">
+      <img src="https://pixlr.com/img/misc/remove-bg-e-commerce.svg" class="ic" width="48" height="48" alt="Perfect for e-commerce">
+      <p><%= description4 %></p>
+    </div>
+  </div>
+  <div class="lg:container lg:mx-auto lg:py-16 md:py-12 md:px-6 py-12 px-4">
+    <h1 class="text-center dark:text-white lg:text-4xl text-3xl lg:leading-9 leading-7 #f8fafc font-semibold">FAQ's</h1>
+
+    <div class="lg:w-8/12 w-full mx-auto">
+      <!-- Question 1 -->
+      <hr class="w-full lg:mt-10 md:mt-12 md:mb-8 my-8" />
+
+      <div class="w-full md:px-6">
+        <div id="mainHeading" class="flex justify-between items-center w-full">
+          <div class="">
+            <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 md:leading-4 #f8fafc">
+              <span class="lg:mr-6 mr-4 dark:text-white lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q1.</span> <%= question1 %>
+            </p>
+          </div>
+          <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+          </button>
+        </div>
+        <div id="menu" class="hidden mt-6 w-full">
+          <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal"> <%= questionDetail1 %> </p>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+
+      <hr class="w-full lg:mt-10 my-8" />
+
+      <div class="w-full md:px-6">
+        <div id="mainHeading" class="flex justify-between items-center w-full">
+          <div class="">
+            <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q2.</span> <%= question2 %></p>
+          </div>
+          <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+          </button>
+        </div>
+        <div id="menu" class="hidden mt-6 w-full">
+          <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal"> <%= questionDetail2 %></p>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+
+      <hr class="w-full lg:mt-10 my-8" />
+
+      <div class="w-full md:px-6">
+        <div id="mainHeading" class="flex justify-between items-center w-full">
+          <div class="">
+            <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q3.</span> <%= question3 %></p>
+          </div>
+          <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+          </button>
+        </div>
+        <div id="menu" class="hidden mt-6 w-full">
+          <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal"> <%= questionDetail3 %></p>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+
+      <hr class="w-full lg:mt-10 my-8" />
+
+      <div class="w-full md:px-6">
+        <div id="mainHeading" class="flex justify-between items-center w-full">
+          <div class="">
+            <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q4.</span> <%= question4 %></p>
+          </div>
+          <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+          </button>
+        </div>
+        <div id="menu" class="hidden mt-6 w-full">
+          <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal"> <%= questionDetail4 %></p>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+
+      <hr class="w-full lg:mt-10 my-8" />
+      <div class="w-full md:px-6">
+        <div id="mainHeading" class="flex justify-between items-center w-full">
+          <div class="">
+            <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q5.</span> <%= question5 %></p>
+          </div>
+          <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+          </button>
+        </div>
+        <div id="menu" class="hidden mt-6 w-full">
+          <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal"> <%= questionDetail5 %></p>
+        </div>
+      </div>
+
+      <!-- Question 6 -->
+
+      <hr class="w-full lg:mt-10 my-8" />
+      <div class="w-full md:px-6">
+        <div id="mainHeading" class="flex justify-between items-center w-full">
+          <div class="">
+            <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q6.</span> <%= question6 %></p>
+          </div>
+          <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+          </button>
+        </div>
+        <div id="menu" class="hidden mt-6 w-full">
+          <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal"> <%= questionDetail6 %></p>
+        </div>
+      </div>
+
+      <hr class="w-full lg:mt-10 my-8" />
+
+      <!-- Question 7 -->
+      <div class="w-full md:px-6">
+        <div id="mainHeading" class="flex justify-between items-center w-full">
+          <div class="">
+            <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q7.</span> <%= question7 %></p>
+          </div>
+          <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+          </button>
+        </div>
+        <div id="menu" class="hidden mt-6 w-full">
+          <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal"> <%= questionDetail7 %></p>
+        </div>
+      </div>
+      <hr class="w-full lg:mt-10 my-8" />
+
+      <!-- Question 8 -->
+      <div class="w-full md:px-6">
+        <div id="mainHeading" class="flex justify-between items-center w-full">
+          <div class="">
+            <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q8.</span> <%= question8 %></p>
+          </div>
+          <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+          </button>
+        </div>
+        <div id="menu" class="hidden mt-6 w-full">
+          <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal"> <%= questionDetail8 %></p>
+        </div>
+      </div>
+      <hr class="w-full lg:mt-10 my-8" />
+
+      <!-- Question 9 -->
+      <div class="w-full md:px-6">
+        <div id="mainHeading" class="flex justify-between items-center w-full">
+          <div class="">
+            <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q9.</span> <%= question9 %> </p>
+          </div>
+          <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+          </button>
+        </div>
+        <div id="menu" class="hidden mt-6 w-full">
+          <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal"> <%= questionDetail9 %></p>
+        </div>
+      </div>
+      <hr class="w-full lg:mt-10 my-8" />
+
+      <!-- Question 10 -->
+      <div class="w-full md:px-6">
+        <div id="mainHeading" class="flex justify-between items-center w-full">
+          <div class="">
+            <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q10.</span> <%= question10 %></p>
+          </div>
+          <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+          </button>
+        </div>
+        <div id="menu" class="hidden mt-6 w-full">
+          <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal"> <%= questionDetail10 %></p>
+        </div>
+      </div>
+      <hr class="w-full lg:mt-10 my-8" />
+    </div>
+  </div>
+
+  <script>
+    let elements = document.querySelectorAll("[data-menu]");
+    for (let i = 0; i < elements.length; i++) {
+      let main = elements[i];
+
+      main.addEventListener("click", function() {
+        let element = main.parentElement.parentElement;
+        let indicators = main.querySelectorAll("img");
+        let child = element.querySelector("#menu");
+        let h = element.querySelector("#mainHeading>div>p");
+
+        h.classList.toggle("font-semibold");
+        child.classList.toggle("hidden");
+        // console.log(indicators[0]);
+        indicators[0].classList.toggle("rotate-180");
+      });
+    }
+  </script>
 </body>
 
 </html>
@@ -159,6 +345,10 @@
         body: formData
       })
       .then(response => response.json()).then(data => {
+        if (data.error) {
+          window.location.reload()
+          return
+        }
         const img = document.getElementById('output');
         img.src = data.path;
         let tmpHTML = '<a download="' + data.path + '" href="' + data.path + '" class="btn btn-primary" style="margin-left: 38px;" type="button"><%= download %></a>'
@@ -170,3 +360,9 @@
       });
   }
 </script>
+
+<footer class="footer items-center p-4 bg-neutral text-neutral-content">
+  <div class="items-center grid-flow-col">
+    <p>Copyright © 2024 - All right reserved by <%= title %></p>
+  </div>
+</footer>

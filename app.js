@@ -75,9 +75,5 @@ app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render("error");
 });
-mongoose
-    .connect(process.env.MONGODB_CONNECTION_STRING)
-    .then((success) => console.log("Connected to mongodb server!"))
-    .catch((err) => console.log("Error, Couldn't connect to mongodb server!!!\n> Stack: " + err));
 
 module.exports = app;
