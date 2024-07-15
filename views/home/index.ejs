@@ -1,25 +1,23 @@
 <header>
   <div class="navbar bg-base-100">
     <div class="flex-1">
-      <a href="/" class="btn btn-ghost text-xl">Background remover</a>
+      <a href="/" class="btn btn-ghost text-xl">Background Remover</a>
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
         <li>
           <details>
-            <summary>
-              languages
-            </summary>
+            <summary>Languages</summary>
             <ul class="p-2 bg-base-100 rounded-t-none">
-              <li><a href="/vi">Viet nam</a></li>
+              <li><a href="/vi">Vietnamese</a></li>
               <li><a href="/en">English</a></li>
-              <li><a href="/hi">India</a></li>
-              <li><a href="/ja">Japan</a></li>
-              <li><a href="/de">Germany</a></li>
-              <li><a href="/fr">France</a></li>
-              <li><a href="/pt">Brazil</a></li>
-              <li><a href="/ru">Russia</a></li>
-              <li><a href="/ko">South Korea</a></li>
+              <li><a href="/hi">Hindi</a></li>
+              <li><a href="/ja">Japanese</a></li>
+              <li><a href="/de">German</a></li>
+              <li><a href="/fr">French</a></li>
+              <li><a href="/pt">Portuguese</a></li>
+              <li><a href="/ru">Russian</a></li>
+              <li><a href="/ko">Korean</a></li>
             </ul>
           </details>
         </li>
@@ -28,11 +26,11 @@
   </div>
 </header>
 
-<body>
+<main>
   <form method="post" action="/uploadImage" enctype="multipart/form-data">
     <div class="hero min-h-screen bg-base-200">
       <div class="hero-content flex-col lg:flex-row">
-        <img id="output" src="/image/image-placeholder.jpg" class="max-w-sm rounded-lg shadow-2xl" alt="no image" height="500" width="500" />
+        <img id="output" src="/image/image-placeholder.jpg" class="max-w-sm rounded-lg shadow-2xl" alt="No image" height="500" width="500" />
         <div>
           <h1 class="text-3xl font-bold text-base-content"><%= home_title %></h1>
           <p class="py-6 text-base-content">
@@ -49,68 +47,65 @@
     </div>
   </form>
 
-  <div id="feature-list">
+  <section id="feature-list">
     <div class="feature">
       <img src="https://pixlr.com/img/misc/remove-bg-wand.svg" class="ic" width="80" height="80" alt="100% automatic bg removal" style="background-color: black; border-radius: 10px;">
       <p><%= description0 %></p>
     </div>
     <div class="feature">
-      <img src="https://pixlr.com/img/misc/remove-bg-batch.svg" class="ic" width="80" height="80" alt="Batch removeal of backgrounds" style="background-color: black; border-radius: 10px;">
-      <p><%= description %></p>
-    </div>
-    <div class="feature">
-      <img src="https://pixlr.com/img/misc/remove-bg-hq.svg" class="ic" width="80" height="80" alt="High quality free background removal" style="background-color: black; border-radius: 10px;">
+      <img src="https://pixlr.com/img/misc/remove-bg-batch.svg" class="ic" width="80" height="80" alt="Batch removal of backgrounds" style="background-color: black; border-radius: 10px;">
       <p><%= description1 %></p>
     </div>
     <div class="feature">
-      <img src="https://pixlr.com/img/misc/remove-bg-brush.svg" class="ic" class="ic" width="80" height="80" alt="Fine tune background removal" style="background-color: black; border-radius: 10px;">
+      <img src="https://pixlr.com/img/misc/remove-bg-hq.svg" class="ic" width="80" height="80" alt="High quality free background removal" style="background-color: black; border-radius: 10px;">
       <p><%= description2 %></p>
     </div>
     <div class="feature">
-      <img src="https://pixlr.com/img/misc/remove-bg-editor.svg" class="ic" width="80" height="80" alt="Photo editor after remove bg" style="background-color: black; border-radius: 10px;">
+      <img src="https://pixlr.com/img/misc/remove-bg-brush.svg" class="ic" width="80" height="80" alt="Fine tune background removal" style="background-color: black; border-radius: 10px;">
       <p><%= description3 %></p>
     </div>
     <div class="feature">
-      <img src="https://pixlr.com/img/misc/remove-bg-e-commerce.svg" class="ic" width="80" height="80" alt="Perfect for e-commerce" style="background-color: black; border-radius: 10px;">
+      <img src="https://pixlr.com/img/misc/remove-bg-editor.svg" class="ic" width="80" height="80" alt="Photo editor after removing background" style="background-color: black; border-radius: 10px;">
       <p><%= description4 %></p>
     </div>
-  </div>
-  <div class="lg:container lg:mx-auto lg:py-16 md:py-12 md:px-6 py-12 px-4">
-    <h1 class="text-center dark:text-white lg:text-4xl text-3xl lg:leading-9 leading-7 #f8fafc font-semibold">FAQ's</h1>
+    <div class="feature">
+      <img src="https://pixlr.com/img/misc/remove-bg-e-commerce.svg" class="ic" width="80" height="80" alt="Perfect for e-commerce" style="background-color: black; border-radius: 10px;">
+      <p><%= description0 %></p>
+    </div>
+  </section>
 
+  <section class="lg:container lg:mx-auto lg:py-16 md:py-12 md:px-6 py-12 px-4">
+    <h2 class="text-center dark:text-white lg:text-4xl text-3xl lg:leading-9 leading-7 font-semibold">FAQ's</h2>
     <div class="lg:w-8/12 w-full mx-auto">
-      <!-- Question 1 -->
+      <!-- FAQ Items -->
       <hr class="w-full lg:mt-10 md:mt-12 md:mb-8 my-8" />
-
       <div class="w-full md:px-6">
-        <div id="mainHeading" class="flex justify-between items-center w-full">
-          <div class="">
-            <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 md:leading-4 #f8fafc">
-              <span class="lg:mr-6 mr-4 dark:text-white lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q1.</span> <%= question1 %>
+        <div id="mainHeading1" class="flex justify-between items-center w-full">
+          <div>
+            <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 md:leading-4">
+              <span class="lg:mr-6 mr-4 dark:text-white lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold">Q1.</span> <%= question1 %>
             </p>
           </div>
           <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
-            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
-            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+            <img class="transform dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler" width="50px" height="50px">
+            <img class="transform dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler" width="50px" height="50px">
           </button>
         </div>
-        <div id="menu" class="hidden mt-6 w-full">
+        <div id="menu1" class="hidden mt-6 w-full">
           <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal"> <%= questionDetail1 %> </p>
         </div>
       </div>
-
       <!-- Question 2 -->
 
       <hr class="w-full lg:mt-10 my-8" />
-
       <div class="w-full md:px-6">
         <div id="mainHeading" class="flex justify-between items-center w-full">
           <div class="">
             <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q2.</span> <%= question2 %></p>
           </div>
           <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
-            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
-            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler" width="50px" height="50px">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler" width="50px" height="50px">
           </button>
         </div>
         <div id="menu" class="hidden mt-6 w-full">
@@ -121,15 +116,14 @@
       <!-- Question 3 -->
 
       <hr class="w-full lg:mt-10 my-8" />
-
       <div class="w-full md:px-6">
         <div id="mainHeading" class="flex justify-between items-center w-full">
           <div class="">
             <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q3.</span> <%= question3 %></p>
           </div>
           <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
-            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
-            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler" width="50px" height="50px">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler" width="50px" height="50px">
           </button>
         </div>
         <div id="menu" class="hidden mt-6 w-full">
@@ -138,17 +132,15 @@
       </div>
 
       <!-- Question 4 -->
-
       <hr class="w-full lg:mt-10 my-8" />
-
       <div class="w-full md:px-6">
         <div id="mainHeading" class="flex justify-between items-center w-full">
           <div class="">
             <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q4.</span> <%= question4 %></p>
           </div>
           <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
-            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
-            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler" width="50px" height="50px">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler" width="50px" height="50px">
           </button>
         </div>
         <div id="menu" class="hidden mt-6 w-full">
@@ -157,7 +149,6 @@
       </div>
 
       <!-- Question 5 -->
-
       <hr class="w-full lg:mt-10 my-8" />
       <div class="w-full md:px-6">
         <div id="mainHeading" class="flex justify-between items-center w-full">
@@ -165,8 +156,8 @@
             <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q5.</span> <%= question5 %></p>
           </div>
           <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
-            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
-            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler" width="50px" height="50px">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler" width="50px" height="50px">
           </button>
         </div>
         <div id="menu" class="hidden mt-6 w-full">
@@ -175,7 +166,6 @@
       </div>
 
       <!-- Question 6 -->
-
       <hr class="w-full lg:mt-10 my-8" />
       <div class="w-full md:px-6">
         <div id="mainHeading" class="flex justify-between items-center w-full">
@@ -183,8 +173,8 @@
             <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q6.</span> <%= question6 %></p>
           </div>
           <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
-            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
-            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler" width="50px" height="50px">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler" width="50px" height="50px">
           </button>
         </div>
         <div id="menu" class="hidden mt-6 w-full">
@@ -193,7 +183,6 @@
       </div>
 
       <hr class="w-full lg:mt-10 my-8" />
-
       <!-- Question 7 -->
       <div class="w-full md:px-6">
         <div id="mainHeading" class="flex justify-between items-center w-full">
@@ -201,8 +190,8 @@
             <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q7.</span> <%= question7 %></p>
           </div>
           <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
-            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
-            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler" width="50px" height="50px">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler" width="50px" height="50px">
           </button>
         </div>
         <div id="menu" class="hidden mt-6 w-full">
@@ -218,8 +207,8 @@
             <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q8.</span> <%= question8 %></p>
           </div>
           <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
-            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
-            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler" width="50px" height="50px">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler" width="50px" height="50px">
           </button>
         </div>
         <div id="menu" class="hidden mt-6 w-full">
@@ -235,8 +224,8 @@
             <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q9.</span> <%= question9 %> </p>
           </div>
           <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
-            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
-            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler" width="50px" height="50px">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler" width="50px" height="50px">
           </button>
         </div>
         <div id="menu" class="hidden mt-6 w-full">
@@ -252,8 +241,8 @@
             <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 #f8fafc"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold #f8fafc">Q10.</span> <%= question10 %></p>
           </div>
           <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
-            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
-            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+            <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler" width="50px" height="50px">
+            <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler" width="50px" height="50px">
           </button>
         </div>
         <div id="menu" class="hidden mt-6 w-full">
@@ -262,59 +251,60 @@
       </div>
       <hr class="w-full lg:mt-10 my-8" />
     </div>
-  </div>
 
-  <script>
-    let elements = document.querySelectorAll("[data-menu]");
-    for (let i = 0; i < elements.length; i++) {
-      let main = elements[i];
+  </section>
+</main>
+<script>
+  let elements = document.querySelectorAll("[data-menu]");
+  for (let i = 0; i < elements.length; i++) {
+    let main = elements[i];
 
-      main.addEventListener("click", function() {
-        let element = main.parentElement.parentElement;
-        let indicators = main.querySelectorAll("img");
-        let child = element.querySelector("#menu");
-        let h = element.querySelector("#mainHeading>div>p");
+    main.addEventListener("click", function() {
+      let element = main.parentElement.parentElement;
+      let indicators = main.querySelectorAll("img");
+      let child = element.querySelector("#menu");
+      let h = element.querySelector("#mainHeading>div>p");
 
-        h.classList.toggle("font-semibold");
-        child.classList.toggle("hidden");
-        // console.log(indicators[0]);
-        indicators[0].classList.toggle("rotate-180");
+      h.classList.toggle("font-semibold");
+      child.classList.toggle("hidden");
+      // console.log(indicators[0]);
+      indicators[0].classList.toggle("rotate-180");
+    });
+  }
+</script>
+<script>
+  const $ = document.querySelector.bind(document);
+  const btnDownload = $('#btn-download');
+
+  function handleImageUpload(event) {
+
+    btnDownload.innerHTML = '<span class="ms-5 loading loading-spinner loading-lg"></span>'
+    const file = event.target.files[0];
+    const formData = new FormData();
+    formData.append('image', file);
+    fetch('/uploadImage', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json()).then(data => {
+        if (data.error) {
+          window.location.reload()
+          return
+        }
+        const img = document.getElementById('output');
+        img.src = data.path;
+        let tmpHTML = '<a download="' + data.path + '" href="' + data.path + '" class="btn btn-primary" style="margin-left: 38px;" type="button"><%= download %></a>'
+        btnDownload.innerHTML = tmpHTML
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // btnDownload.innerHTML = tmpHTML
       });
-    }
-  </script>
-  <script>
-    const $ = document.querySelector.bind(document);
-    const btnDownload = $('#btn-download');
+  }
+</script>
 
-    function handleImageUpload(event) {
-
-      btnDownload.innerHTML = '<span class="ms-5 loading loading-spinner loading-lg"></span>'
-      const file = event.target.files[0];
-      const formData = new FormData();
-      formData.append('image', file);
-      fetch('/uploadImage', {
-          method: 'POST',
-          body: formData
-        })
-        .then(response => response.json()).then(data => {
-          if (data.error) {
-            window.location.reload()
-            return
-          }
-          const img = document.getElementById('output');
-          img.src = data.path;
-          let tmpHTML = '<a download="' + data.path + '" href="' + data.path + '" class="btn btn-primary" style="margin-left: 38px;" type="button"><%= download %></a>'
-          btnDownload.innerHTML = tmpHTML
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          // btnDownload.innerHTML = tmpHTML
-        });
-    }
-  </script>
-
-  <footer class="footer items-center p-4 bg-neutral text-neutral-content">
-    <div class="items-center grid-flow-col">
-      <p>Copyright © 2024 - All right reserved by <%= title %></p>
-    </div>
-  </footer>
+<footer class="footer items-center p-4 bg-neutral text-neutral-content">
+  <div class="items-center grid-flow-col">
+    <p>Copyright © 2024 - All right reserved by <%= title %></p>
+  </div>
+</footer>
