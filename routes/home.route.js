@@ -86,7 +86,7 @@ homeRouter.post("/uploadImage", uploadImage, async function (req, res) {
                     if (err) console.error("Error deleting file:", err);
                     else console.log("File deleted:", outputFilePath);
                 });
-            }, 1000000);
+            }, 100000);
         })
         .catch((error) => {
             res.status(500).send(`Request failed: ${error}`);
