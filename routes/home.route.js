@@ -71,7 +71,7 @@ homeRouter.post("/uploadImage", uploadImage, async function (req, res) {
         responseType: "arraybuffer",
         headers: {
             ...formData.getHeaders(),
-            "X-Api-Key": "4khrxHicJFa4rhC9HvT2JGeE",
+            "X-Api-Key": "DhhEuKN7er7rAumqLUnGzNXg",
         },
         encoding: null,
     })
@@ -80,13 +80,6 @@ homeRouter.post("/uploadImage", uploadImage, async function (req, res) {
             const outputFilePath = `${outputPath}/${req.file.filename}.png`;
             fs.writeFileSync(outputFilePath, response.data);
             res.json({ path: `${process.env.HOSTNAME}/removed/${req.file.filename}.png`.replace("public", "") });
-
-            setTimeout(() => {
-                fs.unlink(outputFilePath, (err) => {
-                    if (err) console.error("Error deleting file:", err);
-                    else console.log("File deleted:", outputFilePath);
-                });
-            }, 100000);
         })
         .catch((error) => {
             res.status(500).send(`Request failed: ${error}`);
